@@ -1,18 +1,15 @@
-#ifndef TRANSPORTATION_HPP
-#define TRANSPORTATION_HPP
+#pragma once
+#include "../common_include_files.hpp"
 
-#include <string>
-
-class Transportation {
+//Train and Bus can inherit from this for extensibility (OCP)
+class Vehicle {
 public:
     virtual int getTransportNumber() const = 0;
-    virtual std::string getTransportName() const = 0;
-    virtual std::string getArrivalStation() const = 0;
-    virtual std::string getDepartureStation() const = 0;
-    virtual std::string getDate() const = 0;
-    virtual std::string getTime() const = 0;
-    virtual ~Transportation() = 0;
+    virtual string getTransportName() const = 0;
+    virtual string getArrivalStation() const = 0;
+    virtual string getDepartureStation() const = 0;
+    virtual string getDate() const = 0;
+    virtual string getTime() const = 0;
+    virtual ~Vehicle() = 0;
 
 };
-
-#endif // TRANSPORTATION_HPP

@@ -6,19 +6,19 @@
 
 class NormalUser : public User {
 public:
-    NormalUser(const std::string& username);
+    NormalUser(const string& username);
 
     void login() override;
     void displayMenu() override;
 
-    void searchTrains(const std::string& departureStation, const std::string& arrivalStation,
-        const std::string& date);
+    void searchTrains(const string& departureStation, const string& arrivalStation,
+        const string& date);
     void displayAvailableSeats(int compartmentId);
     bool bookSeat(int compartmentId, int seatId);
     void displayBookingDetails();
 
 private:
-    std::vector<TrainJourney> journeys;
+    vector<TrainJourney> journeys;
     TrainJourney* selectedJourney;
 };
 

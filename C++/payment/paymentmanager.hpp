@@ -17,7 +17,7 @@ public:
     void ProcessPaymentWithNetbanking(double amount);
     void ProcessPaymentWithCreditcard(double amount);
     void ProcessPaymentWithUPI(double amount);
-    void ResetPaymentSolution(const std::string& paymentProvider);
+    void ResetPaymentSolution(const string& paymentProvider);
 
 private:
     PaymentManager();

@@ -1,7 +1,8 @@
 #pragma once
 #include "loginstrategy.hpp"
+#include "../user/user.hpp"
 
-enum LOGIN_STRATEGY {
+enum  LOGIN_STRATEGY {
     NO_LOGIN,
     USERNAME_PASSWORD,
     EMAIL_OTP,
@@ -14,8 +15,7 @@ private:
 
 public:
     LoginManager();
-    bool performLogin();
+    User* performLogin();
     void DisplayLoginMethods();
     void SetLoginStrategy(int loginstrategy);
-
 };

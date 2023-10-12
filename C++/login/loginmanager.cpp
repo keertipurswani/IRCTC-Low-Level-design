@@ -6,16 +6,17 @@
 
 LoginManager::LoginManager() : strategy(nullptr) {}
 
-bool LoginManager::performLogin() {
+User* LoginManager::performLogin() {
     cout << "Attempting " << strategy->getName() << " login..." << endl;
-    bool loginSuccess = strategy->login();
-    if (loginSuccess) {
+    User* user = strategy->login();
+    if (user != nullptr) {
         cout << "Login successful!" << endl;
+        return user;
     }
     else {
         cout << "Login failed." << endl;
+        return nullptr;
     }
-    return loginSuccess;
 }
 
 void LoginManager::SetLoginStrategy(int loginstrategy) {

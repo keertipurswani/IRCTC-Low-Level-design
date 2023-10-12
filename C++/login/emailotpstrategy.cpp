@@ -1,8 +1,9 @@
 #include "emailotpstrategy.hpp"
+#include "../user/normaluser.hpp"
 
-bool EmailOtpStrategy::login() {
+User* EmailOtpStrategy::login() {
     // Implement email/OTP login logic here
-    return true; // Replace with actual logic
+    return new NormalUser("normal user"); // Replace with actual logic
 }
 
 string EmailOtpStrategy::getName() {

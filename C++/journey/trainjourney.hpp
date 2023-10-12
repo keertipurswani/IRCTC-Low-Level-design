@@ -1,23 +1,18 @@
-#ifndef TRAIN_JOURNEY_HPP
-#define TRAIN_JOURNEY_HPP
-
-#include <string>
-#include <vector>
+#pragma once
+#include "../common_include_files.hpp"
 #include "../transport/train/train.hpp"
 
 class TrainJourney {
-public:
-    TrainJourney(const Train& train, const std::string& date);
-
-    const Train& getTrain() const;
-    const std::string& getDate() const;
-    bool bookSeat(int compartmentId, int seatId);
-    bool isSeatAvailable(int compartmentId, int seatId) const;
-
-private:
     const Train& train;
-    std::string date;
-    std::vector<std::vector<bool>> seatAvailability; // 2D array to track seat availability
+    string date;
+    //Rows - Compartments
+    //Columns - Seats in the compartment
+    vector<vector<bool>> seatAvailability;  
+public:
+    TrainJourney(Train train, string date);
+    Train getTrain();
+    string getDate();
+    bool bookSeat(int compartmentId, int seatId);
+    bool isSeatAvailable(int compartmentId, int seatId);
+    bool checkSeatValidity(int compartmentId, int seatId);
 };
-
-#endif // TRAIN_JOURNEY_HPP

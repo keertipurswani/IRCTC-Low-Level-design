@@ -1,5 +1,6 @@
 #include <iostream>
 #include "transportmanager.hpp"
+#include "user/user.hpp"
 
 
 using namespace std;
@@ -7,23 +8,18 @@ using namespace std;
 int main() {
 	cout << "---------welcome to irctc system----------" << endl;
 	TransportManager& tinstance = TransportManager::getInstance();
-	tinstance.login();
+	//tinstance.initialize();  //could initialize  the system such as databsaes , config files etc.
 
-	cout << endl<< "Enter 1 to search 2 to view history" << endl;
-	string whattodo;
-	cin >> whattodo;
+	User* user = tinstance.login();
+	if (user == nullptr) {
+		cout << "could not login. Try again" << endl;
+	}
+
+	user->displayMenu();
 
 	/*
 	* TAKE CARE OF WHAT TO DO(SEARCH/VIEW HISTORY) AFTER LOGIN
 	*/
-	if (whattodo == "1") {
-		cout << "SEARCH INITIATED..." << endl;
-
-	}
-	else if(whattodo == "2") {
-		cout << "VIEW HISTORY INITIATED..." << endl;
-	}
-
 
 
 	return 0;

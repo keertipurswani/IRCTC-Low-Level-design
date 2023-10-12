@@ -1,24 +1,23 @@
-// Concrete TrainTransportDatabase class
-#include "transportdatabase.hpp"
-#include "../transport/train/train.hpp"
-class TrainTransportDatabase : public TransportDatabase {
-private:
-    std::vector<Train*> trainRecords;
+#include "../common_include_files.hpp"
+#include "traindatabase.hpp"
 
-public:
-    void addTransport(int trainNumber, const std::string& trainName, vector<string> stations,
-        const std::string& starttime) override {
+// Define the static instance of the singleton
+TrainTransportDatabase& TrainTransportDatabase::getInstance() {
+    static TrainTransportDatabase instance;
+    return instance;
+}
 
-        Train* train = new Train(12345, 1, "shatabdi express");
-        trainRecords.push_back(train);
-    }
+// Private constructor
+TrainTransportDatabase::TrainTransportDatabase() {
+    // Initialize any private members here
+}
 
-    void searchTransport(const std::string& from, const std::string& to, const std::string& date) override {
-        std::cout << "Searching for Train Transport from " << from << " to " << to << " on " << date << ":" << std::endl;
-        for (Train* record : trainRecords) {
-            if (record.find(from) != std::string::npos && record.find(to) != std::string::npos && record.find(date) != std::string::npos) {
-                std::cout << record << std::endl;
-            }
-        }
-    }
-};
+void TrainTransportDatabase::addTransport(int trainNumber, const string trainName, string trainId, vector<string> stations,vector<string> arrivaltime, vector<int> distance, vector<int> traveldays) {
+    // Implement the addTransport method as needed to add a Train to the database
+    // You can create a Train object and add it to the trainRecords vector here
+}
+
+void TrainTransportDatabase::searchTransport(const string& from, const string& to, const string& date) {
+    // Implement the searchTransport method to search for trains based on from, to, and date
+    // You can iterate through trainRecords and perform the search here
+}

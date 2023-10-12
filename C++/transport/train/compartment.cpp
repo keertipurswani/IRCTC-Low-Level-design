@@ -15,6 +15,6 @@ CompartmentType Compartment::getCompartmentType() const {
     return compartmentType;
 }
 
-const std::vector<Seat>& Compartment::getSeats() const {
+const vector<Seat>& Compartment::getSeats() const {
     return seats;
 }

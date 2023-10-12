@@ -2,14 +2,15 @@
 #define TRANSPORTMANAGER_HPP
 
 #include <iostream>
+#include "user/user.hpp"
 
 class TransportManager {
 public:
     static TransportManager& getInstance();
 
-    void searchTransport(const std::string& source, const std::string& destination);
-    void bookTransport(const std::string& transportType);
-    bool login();
+    void searchTransport(const string& source, const string& destination);
+    void bookTransport(const string& transportType);
+    User* login();
 
 private:
     TransportManager();

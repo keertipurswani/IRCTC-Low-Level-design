@@ -3,6 +3,6 @@
 
 class UsernamePasswordStrategy : public LoginStrategy {
 public:
-    bool login() override;
+    User* login() override;
     string getName() override;
 };

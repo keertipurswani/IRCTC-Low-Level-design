@@ -1,13 +1,13 @@
 #include "user.hpp"
 
-User::User(const std::string& username, const std::string& role)
+User::User(const string& username, const string& role)
     : username(username), role(role) {}
 
- std::string User::getUsername() const {
+ string User::getUsername() const {
     return username;
 }
 
- std::string User::getRole() const {
+ string User::getRole() const {
     return role;
 }
 string User::getPassword() const {

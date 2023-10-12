@@ -1,7 +1,9 @@
 #include "usernamepasswordstrategy.hpp"
+#include "../common_include_files.hpp"
 
-bool UsernamePasswordStrategy::login() {
+User* UsernamePasswordStrategy::login() {
     // Implement username/password login logic here
+
     cout << "enter username : ";
     string username;
     cin >> username;
@@ -11,8 +13,15 @@ bool UsernamePasswordStrategy::login() {
     cin >> password;
     cout << endl;
 
+
     //this calls the user module to check the login username and password matches
-    return true;
+    if (username == "admin") {
+        return new Admin("Admin");
+    }
+    else {
+        return new NormalUser("normal user");
+    }
+    return nullptr;
 }
 
 string UsernamePasswordStrategy::getName() {

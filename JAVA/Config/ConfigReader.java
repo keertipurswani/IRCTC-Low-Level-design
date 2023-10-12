@@ -14,6 +14,7 @@ public class ConfigReader {
     }
 
     public static ConfigReader getInstance() {
+        //Implement Singleton - Double Checked Locking should be there
         return instance;
     }
 

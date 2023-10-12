@@ -1,26 +1,20 @@
-#ifndef CONFIGREADER_HPP
-#define CONFIGREADER_HPP
-
+#pragma once
 #include "../common_include_files.hpp"
 
 class ConfigReader {
 public:
     static ConfigReader& getInstance();
-    void Initialize(const std::string& filePath);
-    bool GetValue(const std::string& section, const std::string& key, bool& value) const;
-    std::map<std::string, std::map<std::string, bool>> GetConfigMap() {
+    void Initialize(const string& filePath);
+    bool GetValue(const string& section, const string& key, bool& value) const;
+    map<string, map<string, bool>> GetConfigMap() {
         return configData;
     }
     ~ConfigReader();
-
-
 
 private:
     ConfigReader();
     ConfigReader(const ConfigReader&) = delete;
     ConfigReader& operator=(const ConfigReader&) = delete;
 
-    std::map<std::string, std::map<std::string, bool>> configData;
+    map<string, map<string, bool>> configData;
 };
-
-#endif // CONFIGREADER_HPP

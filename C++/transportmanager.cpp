@@ -12,17 +12,17 @@ TransportManager& TransportManager::getInstance() {
     return instance;
 }
 
-void TransportManager::searchTransport(const std::string& source, const std::string& destination) {
-    std::cout << "Searching for transport from " << source << " to " << destination << std::endl;
+void TransportManager::searchTransport(const string& source, const string& destination) {
+    cout << "Searching for transport from " << source << " to " << destination << endl;
     // Implement the search logic here
 }
 
-void TransportManager::bookTransport(const std::string& transportType) {
-    std::cout << "Booking " << transportType << std::endl;
+void TransportManager::bookTransport(const string& transportType) {
+    cout << "Booking " << transportType << endl;
     // Implement the booking logic here
 }
 
-bool TransportManager::login()
+User* TransportManager::login()
 {
     LoginManager loginmaanger; 
 
@@ -34,5 +34,4 @@ bool TransportManager::login()
 
     loginmaanger.SetLoginStrategy(typeoflogin);
     return loginmaanger.performLogin();
-
 }

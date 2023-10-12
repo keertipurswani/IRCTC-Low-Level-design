@@ -1,7 +1,8 @@
 // Concrete credit card payment for phonepe
-#pragma once
-#include "../upipayment.hpp"
 
+#pragma once
+
+#include "../upipayment.hpp"
 class RazorpayUPIPayment : public UPIPayment {
 public:
     void ProcessUPIPayment(double amount) {

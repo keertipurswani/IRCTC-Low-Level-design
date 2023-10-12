@@ -7,24 +7,25 @@ ConfigReader::ConfigReader() {}
 ConfigReader::~ConfigReader() {}
 
 ConfigReader& ConfigReader::getInstance() {
+    //Implement Singleton - Double Checked Locking should be there
     static ConfigReader instance;
     return instance;
 }
 
-void ConfigReader::Initialize(const std::string& filePath) {
-    std::ifstream configFile(filePath);
+void ConfigReader::Initialize(const string& filePath) {
+    ifstream configFile(filePath);
     if (!configFile.is_open()) {
-        std::cerr << "Failed to open the config file: " << filePath << std::endl;
+        cerr << "Failed to open the config file: " << filePath << endl;
         return;
     }
 
-    std::string currentSection;
-    std::string line;
+    string currentSection;
+    string line;
 
-    while (std::getline(configFile, line)) {
+    while (getline(configFile, line)) {
         // Trim leading and trailing whitespace
         size_t firstNonSpace = line.find_first_not_of(" \t");
-        if (firstNonSpace == std::string::npos) {
+        if (firstNonSpace == string::npos) {
             // Skip empty lines
             continue;
         }
@@ -38,8 +39,8 @@ void ConfigReader::Initialize(const std::string& filePath) {
         else {
             // This line contains key-value pairs
             size_t colonPos = line.find(':');
-            if (colonPos != std::string::npos) {
-                std::string key = line.substr(0, colonPos);
+            if (colonPos != string::npos) {
+                string key = line.substr(0, colonPos);
                 bool value = line.substr(colonPos + 1) == "true";
 
                 // Store the key-value pair in the map
@@ -51,7 +52,7 @@ void ConfigReader::Initialize(const std::string& filePath) {
     configFile.close();
 }
 
-bool ConfigReader::GetValue(const std::string& section, const std::string& key, bool& value) const {
+bool ConfigReader::GetValue(const string& section, const string& key, bool& value) const {
     auto sectionIter = configData.find(section);
     if (sectionIter != configData.end()) {
         auto keyIter = sectionIter->second.find(key);

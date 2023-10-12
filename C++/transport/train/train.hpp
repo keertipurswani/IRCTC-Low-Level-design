@@ -4,29 +4,36 @@
 #include "Compartment.hpp"
 #include <string>
 #include <vector>
+#include "../../common_include_files.hpp"
 
 class Train {
 public:
-    Train(int number, const std::string& id, const std::string& name);
+    Train(int number, string id, string name);
+    Train(int number, string id, string name,
+        vector<string> stations, vector<string> arrivalTimes, vector<int> daysofweek, int numofcompartments);
 
-    void addStation(const std::string& station, const std::string& arrivalTime);
+    void addStation(string station, string arrivalTime);
     void addCompartment(int id, CompartmentType type, int numberOfSeats);
 
-    int getTrainNumber() const;
-    const std::string& getTrainId() const;
-    const std::string& getTrainName() const;
+    int getTrainNumber();
+    string getTrainId();
+    string getTrainName();
 
-    const std::vector<std::string>& getStations() const;
-    const std::vector<std::string>& getArrivalTimes() const;
-    const std::vector<Compartment>& getCompartments() const;
+    vector<string> getStations();
+    vector<string> getArrivalTimes();
+    vector<Compartment> getCompartments();
 
 private:
     int trainNumber;
-    std::string trainId;
-    std::string trainName;
-    std::vector<std::string> stations;
-    std::vector<std::string> arrivalTimes;
-    std::vector<Compartment> compartments;
+    string trainId;
+    string trainName;
+    vector<string> stations;
+    vector<string> arrivalTimes;
+    int numCompartments;
+    vector<Compartment> compartments;
+    vector<int>         distancefromorigin;  //{0, 70, 120, 180...}
+    vector<int>         traveldays; // which days of week this train runs e.g. 0-sunday , 1-monday and so on
+
 };
 
 #endif // TRAIN_HPP

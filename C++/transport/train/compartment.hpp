@@ -1,10 +1,8 @@
-#ifndef COMPARTMENT_HPP
-#define COMPARTMENT_HPP
-
+#pragma once
 #include "Seat.hpp"
-#include <vector>
+#include "../common_include_files.hpp"
 
-enum class CompartmentType {
+enum  CompartmentType {
     AC,
     GENERAL,
     THREE_TIER,
@@ -18,12 +16,10 @@ public:
 
     int getCompartmentId() const;
     CompartmentType getCompartmentType() const;
-    const std::vector<Seat>& getSeats() const;
+    const vector<Seat>& getSeats() const;
 
 private:
     int compartmentId;
     CompartmentType compartmentType;
-    std::vector<Seat> seats;
+    vector<Seat> seats;
 };
-
-#endif // COMPARTMENT_HPP

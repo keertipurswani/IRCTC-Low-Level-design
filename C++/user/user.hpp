@@ -5,7 +5,7 @@
 
 class User {
 public:
-    User(const std::string& username, const std::string& role);
+    User(const string& username, const string& role);
 
     virtual void login() = 0;
     virtual void displayMenu() = 0;

@@ -6,17 +6,18 @@
 
 class Admin : public User {
 public:
-    Admin(const std::string& username);
+    Admin(const string& username);
 
     void login() override;
     void displayMenu() override;
 
     void addTrain(Train& train);
-    void displayTrains(const std::string& departureStation, const std::string& arrivalStation,
-        const std::string& date) const;
+    void displayTrains(const string& departureStation, const string& arrivalStation,
+        const string& date) const;
 
 private:
-    std::vector<Train> trains;
+    vector<Train> trains;
+    void readDataFromFileAndAddToDB();
 };
 
 #endif // ADMIN_HPP

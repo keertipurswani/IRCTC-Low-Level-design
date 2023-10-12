@@ -1,8 +1,8 @@
 #include "thirdpartystrategy.hpp"
 
-bool ThirdPartyStrategy::login() {
+User* ThirdPartyStrategy::login() {
     // Implement 3rd party login logic here
-    return true; // Replace with actual logic
+    return new NormalUser("normal user"); // Replace with actual logic
 }
 
 string ThirdPartyStrategy::getName() {

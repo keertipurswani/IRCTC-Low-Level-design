@@ -8,7 +8,7 @@ PaymentManager& PaymentManager::GetInstance() {
     return instance;
 }
 
-void PaymentManager::ResetPaymentSolution(const std::string& paymentProvider) {
+void PaymentManager::ResetPaymentSolution(const string& paymentProvider) {
     if (paymentProvider == "razorpay") {
         delete paymentsolution;
         paymentsolution = new RazorpayPaymentFactory();
