@@ -1,0 +1,38 @@
+-------------------Train Ticket Booking System Requirements-----------------------------------
+
+1. User Registration
+- The system must provide user registration functionality, allowing users to create accounts.
+- Users must be able to sign in with their credentials securely.
+
+2. Train Search
+- The system must offer a comprehensive train search feature, enabling users to find trains based on various criteria.
+- Users should be able to search for trains by specifying departure and arrival stations, travel dates, and class of travel.
+
+3. Seat Availability
+- The system must provide users with the ability to check the availability of seats on a specific train for a given date.
+- Users should be able to verify the availability of seats in different classes, such as economy, business, and first class.
+
+4. Ticket Booking
+- Users must be able to book tickets for their chosen train and class.
+- The booking process should be user-friendly and intuitive, guiding users through the required steps.
+- Users should receive a confirmation of their booking after successful payment.
+
+5. Payment Processing
+- The system must ensure secure and reliable payment processing for ticket bookings.
+- Payment options should include various methods such as credit/debit cards, digital wallets, and net banking.
+- Users' payment information should be handled with the highest level of security and compliance with industry standards.
+
+6. Ticket Cancellation
+- Users should have the ability to cancel their booked tickets through the system.
+- The system should specify rules and procedures for ticket cancellation, including refund policies and associated fees.
+
+7. Booking History
+- The system should maintain a comprehensive booking history for each user.
+- Users should be able to view their past bookings, including details such as travel dates, train information, and class of travel.
+- Historical booking data should be easily accessible and organized.
+
+8. Train Schedule
+- The system must display detailed train schedules, including departure and arrival times, for all available trains.
+- Users should have access to up-to-date information about train schedules to plan their journeys effectively.
+- The train schedule information should be accurate and regularly updated.
+
